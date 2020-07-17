@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 
 function App() {
   const [ myScore, setScore ] = useState(20)
@@ -46,17 +45,19 @@ function App() {
     </div>
     <div className="ui segment">
       <div className="ui container center aligned">
-        <h1>
+        <h2>
         {
           myScore > percent ? '입력하신 수행평가 점수가 수행평가 반영 퍼센트보다 큽니다.' :
           percent > 100 ? '입력하신 수행평가 반영 퍼센트가 100%보다 큽니다.' :
-          want > 100 ? '입력하신 희망 점수가 100점보다 큽니다.' :
-          isNaN(myScore) || isNaN(percent) || isNaN(want) ? '입력하신 값중 숫자가 아닌값이 있습니다.' : (
+          want > 100 ? '입력하신 목표 점수가 100점보다 큽니다.' :
+          isNaN(myScore) || isNaN(percent) || isNaN(want) ? '입력하신 값중 숫자가 아닌값이 있습니다.' :
+          (want - myScore) * (100/(100-percent)) > 100 ? '아쉽지만 목표점수에 도달할 수 없어요' :
+          (
           <>
           <span style={{ color: 'red' }}>{want}</span>점 이상 받으시려면 <span style={{ color: 'red' }}>{(want - myScore) * (100/(100-percent))}</span>점이여야합니다!</>
           )
         }
-        </h1>
+        </h2>
       </div>
     </div>
     </div>

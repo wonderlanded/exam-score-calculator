@@ -24,8 +24,8 @@
   "scripts": {
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "react-start": "react-scripts start",
-    "react-build": "react-scripts build",
+    "react-start": "tsc ./public/electron.ts && react-scripts start",
+    "react-build": "tsc ./public/electron.ts && react-scripts build",
     "react-test": "react-scripts test",
     "react-eject": "react-scripts eject",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",

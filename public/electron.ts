@@ -7,8 +7,11 @@ let mainWindow: BrowserWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     center: true,
-    kiosk: !isDev,
     resizable: true,
+    minWidth: 700,
+    minHeight: 600,
+    autoHideMenuBar: true,
+    
     webPreferences: {
       nodeIntegration: true
     }
