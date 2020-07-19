@@ -11,9 +11,9 @@ function createWindow() {
     minWidth: 700,
     minHeight: 600,
     autoHideMenuBar: true,
-    
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.join(__dirname)
     }
   });
 
